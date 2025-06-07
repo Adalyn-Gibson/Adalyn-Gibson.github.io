@@ -6,15 +6,15 @@
     <title>Adalyn Gibson Test | Personal Website</title>
     <style>
         body {
-            font-family: 'Roboto', Arial, sans-serif;
+            font-family: 'Lucida Console', Monaco, monospace;
             margin: 0;
             padding: 0;
-            background: #FAE3E3;
+            background: #F6F2FF;
             color: #222;
         }
         header {
-            background: #FAE3E3;
-            color: #CFA5B4;
+            background: #F6F2FF;
+            color: #2B4570;
             padding: 2rem 0 1.5rem 0;
             text-align: center;
         }
@@ -29,17 +29,17 @@
             font-weight: 300;
         }
         main {
-            max-width: 680px;
+            max-width: 900px;
             margin: 2rem auto;
-            background: #CFA5B4;
+            background: #2B4570;
             box-shadow: 0 2px 10px rgba(79,70,229,0.05);
             border-radius: 10px;
-            padding: 2rem;
+            padding: 2.5rem;
         }
         /* Tab styles */
         .tabs {
             display: flex;
-            border-bottom: 2px solid #846B8A;
+            border-bottom: 2px solid #DCCCFF;
             margin-bottom: 1.5rem;
         }
         .tab {
@@ -49,13 +49,13 @@
             border: none;
             outline: none;
             font-size: 1.1rem;
-            color: #846B8A;
+            color: #DCCCFF;
             font-weight: bold;
             transition: background 0.2s;
             border-radius: 10px 10px 0 0;
         }
         .tab.active {
-            background: #FAE3E3;
+            background: #F6F2FF;
             color: #222;
         }
         .tab-content {
@@ -68,17 +68,17 @@
             margin-bottom: 2rem;
         }
         h2 {
-            color: #846B8A;
+            color: #DCCCFF;
             margin-top: 0;
         }
         a {
-            color: #FAE3E3;
+            color: #F6F2FF;
             text-decoration: none;
             transition: color 0.2s;
         }
         a:hover {
             text-decoration: underline;
-            color: #846B8A;
+            color: #DCCCFF;
         }
         .social-links a {
             margin-right: 1rem;
@@ -110,6 +110,7 @@
         <div class="tabs">
             <button class="tab active" onclick="showTab('about')">About Me</button>
             <button class="tab" onclick="showTab('projects')">Projects</button>
+            <button class="tab" onclick="showTab('outandteach')">Contact</button>
             <button class="tab" onclick="showTab('contact')">Contact</button>
         </div>
         <section id="about" class="tab-content active">
@@ -118,11 +119,18 @@
                 My journey as a fourth-year student in the astrophysical and planetary sciences department at the University of Colorado Boulder has been enriched by my active involvement in undergraduate research. Since my first year, I have been part of research initiatives studying debris disks and exocomets. Since the Spring semester of 2024, I have expanded my research horizons to focus on studying stellar flares. In the Spring of 2025, I successfully defended my Latin Honors thesis, "Probing Non-Thermal Processes in Stellar Flares on AU Mic." This hands-on experience has deepened my understanding of the subject and honed my research skills. Complementing my research, I am deeply committed to science education and have actively contributed to science education outreach at Fiske Planetarium. My passion for science education has also led me to be a Learning Assistant, where I assisted in the instruction of the ASTR 2600 - Introduction to Scientific Programming course.
             </p>
         </section>
-        <section id="projects" class="tab-content">
-            <h2>Projects</h2>
+        <section id="Research" class="tab-content">
+            <h2>Research Highlights</h2>
             <ul>
-                <li><strong>Project Name 1</strong>: Short description of your project. <a href="#">View on GitHub</a></li>
-                <li><strong>Project Name 2</strong>: Short description of your project. <a href="#">View on GitHub</a></li>
+                <li><strong>Probing Non-Thermal Processes in Stellar Flares</strong>: Short description of your project. <a href="#">View on GitHub</a></li>
+                <li><strong>Atmospheric Characterization</strong>: Short description of your project. <a href="#">View on GitHub</a></li>
+                <li><strong>TESS Photometry of Extreme Debris Disk RZ Psc</strong>: Short description of your project. <a href="#">View on GitHub</a></li>
+            </ul>
+        </section>
+        <section id="outandteach" class="tab-content">
+            <h2>Outreach and Teaching</h2>
+            <ul>
+                <li><strong>CU Astronomy Club</strong>: Short description of your project. <a href="#">View on GitHub</a></li>
             </ul>
         </section>
         <section id="contact" class="tab-content">
