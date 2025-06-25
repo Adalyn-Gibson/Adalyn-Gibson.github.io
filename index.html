@@ -4,63 +4,91 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Adalyn Gibson | Personal Website</title>
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: 'Lato', sans-serif;
+      font-family: 'Lato', Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background: #FFFFFF;
+      background: linear-gradient(135deg, #f8f9fa 0%, #e3e6f3 100%);
       color: #222;
+      min-height: 100vh;
     }
 
     header {
       text-align: center;
-      padding: 2rem;
-      background: #fff;
+      padding: 2.5rem 1rem 2rem 1rem;
+      background: linear-gradient(90deg, #fff 60%, #e1d6f7 100%);
+      box-shadow: 0 2px 12px rgba(75,63,114,0.07);
+      position: relative;
     }
 
     header h1 {
       margin: 0;
-      font-size: 2.5rem;
-      color: #000000;
+      font-size: 3rem;
+      color: #4B3F72;
+      letter-spacing: 1px;
     }
 
     header p {
       margin: 0.5rem 0 0;
-      font-size: 1.2rem;
+      font-size: 1.25rem;
       color: #666;
+    }
+
+    .cv-link {
+      margin-top: 1.2rem;
+      font-size: 1.1rem;
+      display: inline-block;
+      background: #4B3F72;
+      color: #fff !important;
+      padding: 0.4em 1.5em;
+      border-radius: 32px;
+      text-decoration: none;
+      transition: background 0.2s;
+      box-shadow: 0 2px 8px rgba(75,63,114,0.09);
+    }
+    .cv-link:hover {
+      background: #32275a;
     }
 
     .card-grid {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 1rem;
-      padding: 2rem;
+      gap: 1.5rem;
+      padding: 3rem 1rem 2rem 1rem;
+      background: transparent;
     }
 
     .card {
       position: relative;
-      width: 550px;
-      height: 250px;
+      width: 350px;
+      height: 200px;
       background-size: cover;
       background-position: center;
-      border-radius: 0;
+      border-radius: 18px;
       cursor: pointer;
       overflow: hidden;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.25);
-      transition: transform 0.3s ease;
+      box-shadow: 0 8px 28px rgba(75,63,114,0.18), 0 1.5px 5px rgba(75,63,114,0.12);
+      transition: transform 0.2s, box-shadow 0.2s;
+      background-color: #fff;
     }
 
     .card:hover {
-      transform: scale(1.05);
+      transform: translateY(-8px) scale(1.04);
+      box-shadow: 0 16px 32px rgba(75,63,114,0.21), 0 2px 8px rgba(75,63,114,0.14);
     }
 
     .card::before {
       content: "";
       position: absolute;
       inset: 0;
-      background: rgba(0, 0, 0, 0.3);
+      background: rgba(41, 30, 60, 0.25);
+      transition: background 0.2s;
+    }
+    .card:hover::before {
+      background: rgba(41, 30, 60, 0.14);
     }
 
     .card-text {
@@ -69,45 +97,146 @@
       width: 100%;
       text-align: center;
       color: white;
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       font-weight: bold;
-      padding: 0.75rem 0;
+      letter-spacing: 0.5px;
+      padding: 1.1rem 0 0.85rem 0;
       z-index: 1;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.25);
+      background: linear-gradient(0deg, rgba(41,30,60,.44) 60%, rgba(0,0,0,0) 100%);
+    }
+
+    main {
+      min-height: 60vh;
     }
 
     .section-content {
       display: none;
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 2rem;
+      max-width: 850px;
+      margin: 2.5rem auto 2rem auto;
+      padding: 2.5rem 2rem 2rem 2rem;
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 2px 16px rgba(75,63,114,0.10);
+      animation: fadeIn 0.6s;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(25px);}
+      to { opacity: 1; transform: translateY(0);}
     }
 
     .section-content.active {
       display: block;
     }
 
+    .section-content h2 {
+      color: #4B3F72;
+      font-size: 2.1rem;
+      margin-bottom: 1.1rem;
+      margin-top: 0;
+      letter-spacing: 0.5px;
+    }
+    .section-content h3 {
+      margin-top: 2.1rem;
+      font-size: 1.35rem;
+      color: #2e2049;
+      letter-spacing: 0.2px;
+      font-weight: 700;
+    }
+    .section-content p {
+      font-size: 1.09rem;
+      line-height: 1.7;
+      color: #222;
+    }
+    .section-content a {
+      color: #4B3F72;
+      word-break: break-all;
+      transition: color 0.2s;
+    }
+    .section-content a:hover {
+      color: #32275a;
+      text-decoration: underline;
+    }
+    .section-content img {
+      max-width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 2px 14px rgba(75,63,114,0.13);
+      margin: 1.3em 0 1.75em 0;
+      display: block;
+    }
+
     .back-button {
       display: block;
-      margin-top: 2rem;
+      margin-top: 2.5rem;
       text-align: center;
     }
 
     .back-button button {
-      padding: 0.5rem 1rem;
-      font-size: 1rem;
+      padding: 0.65rem 1.5rem;
+      font-size: 1.08rem;
       border: none;
-      background: #000000;
+      background: #4B3F72;
       color: white;
-      border-radius: 5px;
+      border-radius: 25px;
+      box-shadow: 0 2px 8px rgba(75,63,114,0.08);
       cursor: pointer;
+      font-weight: 600;
+      letter-spacing: 0.6px;
+      transition: background 0.2s;
+    }
+    .back-button button:hover {
+      background: #32275a;
     }
 
-    a {
-      color: #000000;
+    .social-links {
+      margin-top: 1.5rem;
+      font-size: 1.12rem;
+      letter-spacing: 0.2px;
+      text-align: center;
     }
-
-    a:hover {
+    .social-links a {
+      color: #4B3F72;
+      font-weight: 500;
+      margin: 0 7px;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .social-links a:hover {
+      color: #222;
       text-decoration: underline;
+    }
+
+    @media (max-width: 900px) {
+      .card-grid {
+        gap: 1rem;
+      }
+      .section-content {
+        padding: 1.5rem 0.7rem 1.5rem 0.7rem;
+      }
+    }
+    @media (max-width: 750px) {
+      .card-grid {
+        flex-direction: column;
+        align-items: center;
+        padding: 1.2rem 0.2rem 2rem 0.2rem;
+      }
+      .card {
+        width: 95vw;
+        max-width: 370px;
+        height: 150px;
+      }
+      .section-content {
+        max-width: 98vw;
+      }
+    }
+    @media (max-width: 500px) {
+      header h1 {
+        font-size: 2.1rem;
+      }
+      .section-content h2 {
+        font-size: 1.25rem;
+      }
     }
   </style>
 </head>
@@ -116,77 +245,81 @@
     <h1>Adalyn Gibson</h1>
     <p>Astrophysics Undergraduate at the University of Colorado Boulder</p>
     <p>Undergraduate Researcher</p>
-    <p>Insert Link to CV</p>
+    <a class="cv-link" href="#" target="_blank">View CV</a>
   </header>
 
-  <div id="home" class="card-grid">
-    <div class="card" style="background-image: url('IMG_5934 (4).jpg');" onclick="showSection('about')">
-      <div class="card-text">About Me</div>
+  <main>
+    <div id="home" class="card-grid">
+      <div class="card" style="background-image: url('IMG_5934 (4).jpg');" onclick="showSection('about')">
+        <div class="card-text">About Me</div>
+      </div>
+      <div class="card" style="background-image: url('researchbackground.png');" onclick="showSection('Research')">
+        <div class="card-text">Research Highlights</div>
+      </div>
+      <div class="card" style="background-image: url('astroclub2.png');" onclick="showSection('outandteach')">
+        <div class="card-text">Outreach & Teaching</div>
+      </div>
+      <div class="card" style="background-image: url('image_7427e-DS-Tuc-Ab.jpg');" onclick="showSection('contact')">
+        <div class="card-text">Contact</div>
+      </div>
     </div>
-    <div class="card" style="background-image: url('researchbackground.png');" onclick="showSection('Research')">
-      <div class="card-text">Research Highlights</div>
-    </div>
-    <div class="card" style="background-image: url('astroclub2.png');" onclick="showSection('outandteach')">
-      <div class="card-text">Outreach & Teaching</div>
-    </div>
-    <div class="card" style="background-image: url('image_7427e-DS-Tuc-Ab.jpg');" onclick="showSection('contact')">
-      <div class="card-text">Contact</div>
-    </div>
-  </div>
 
-  <section id="about" class="section-content">
-    <h2>About Me</h2>
-    <p>
-       I am interested in pursuing further research on the impact of stellar activity on planet formation and habitability, as well as the characterization and modeling of exoplanet atmospheres. My goal is to pursue research that bridges my knowledge of stellar activity and astrobiology, exploring how stellar phenomena impact the atmospheres of exoplanets. I intend to pursue further complementary modeling and observational astronomy.
-    </p>
-    <div class="back-button"><button onclick="goHome()">← Back to Home</button></div>
-  </section>
+    <section id="about" class="section-content">
+      <h2>About Me</h2>
+      <p>
+        I am interested in pursuing further research on the impact of stellar activity on planet formation and habitability, as well as the characterization and modeling of exoplanet atmospheres. My goal is to pursue research that bridges my knowledge of stellar activity and astrobiology, exploring how stellar phenomena impact the atmospheres of exoplanets. I intend to pursue further complementary modeling and observational astronomy.
+      </p>
+      <div class="back-button"><button onclick="goHome()">← Back to Home</button></div>
+    </section>
 
-  <section id="Research" class="section-content">
-    <h2>Research Highlights</h2>
-    <p>
-      <a href="https://orcid.org/0009-0006-5310-6855">ORCHID</a> | <a href="https://ui.adsabs.harvard.edu/search/q=author%3A%22Gibson%2C%20Adalyn%22&sort=date%20desc%2C%20bibcode%20desc&p_=0">ADS</a>
-    </p>
-    <h3>Probing Non-Thermal Processes in Stellar Flares</h3> 
-    <p>
-      In my second year, I expanded my research horizons to include stellar flare physics, something I was not expecting to love as much as I do. I fell in love with flares and would like to pursue research on stellar activity in the future, especially in the context of exoplanet atmospheres. In this research, conducted under the guidance of Dr. Adam Kowalski and Dr. Adina Feinstein, I utilized Hubble Space Telescope/Cosmic Origins Spectrograph observations of the young M-dwarf AU Mic to characterize its stellar flare atmosphere, with the initial goal of searching for non-thermal proton beams during flares. I identified, modeled, and calculated the properties of the observed flares and compared my findings with those in the literature. In my research, I worked with stellar flare models and explored the current successes and failures of these models. I also discussed in depth the effects of stellar flaring on exoplanet atmospheres and habitability. I presented my research via a <a href="https://aas242-aas.ipostersessions.com/?s=2D-E3-A1-85-02-E6-11-EE-E9-EF-18-82-A8-BE-24-E3">iposter</a> presentation at the 245th American Astronomical Society meeting, as well as the 2025 Conference for Undergraduate Women and Gender Minorities in Physics and the 2025 CU Boulder Undergraduate Research Expo. This research served as the subject of my undergraduate Latin honors thesis, completed in my third year, and I received the honors designation of Magna Cum Laude; I published this research in the CU honors journal. On arXiv now! Submitted to The Astrophysical Journal Letters.<a href="https://arxiv.org/abs/2506.10201">arXiv:2506.10201</a>
-      <img src="IMG_8881 (3).heic.png" style="height:200px; margin: 1em 0; display: block;">
-    </p>
-    
-    <h3>TESS Photometry of Extreme Debris Disk RZ Psc</h3> 
-    <p>
-      In my first semester at the University of Colorado Boulder, I was accepted into the STEM Routes Uplift program, which places underrepresented undergraduate students with research advisors to pursue undergraduate research. In this program, I attended weekly workshops on technical research skills and learned essential research skills through hands-on training and my research project. I was paired with Dr. Meredith MacGregor as my research advisor and conducted a study searching for exocomets in extreme debris disks using observations from The Transiting Exoplanet Survey Satellite. After presenting my final project for the Uplift program, I continued my research with Dr. Meredith MacGregor and Dr. Ward Howard on exocomets. I was awarded two Undergraduate Research Opportunity grants to pursue this research. I presented this research at the 2024 Conference for Undergraduate Women and Gender Minorities in Physics and the 2024 CU Boulder Undergraduate Research Expo. I detected 19 exocomets in the extreme debris disk around RZ Psc. I modeled these exocomets and calculated their properties, comparing them to populations found in other systems and our solar system, and analyzed the potential of exocomet science in the context of habitable planet formation. I got experience modeling, characterizing, and removing stellar variability through Gaussian Process modeling.
-      <img src="IMG_1774.HEIC.png" style="height:200px; margin: 1em 0; display: block;">
-    </p>
+    <section id="Research" class="section-content">
+      <h2>Research Highlights</h2>
+      <p style="margin-bottom: 1.5em;">
+        <a href="https://orcid.org/0009-0006-5310-6855" target="_blank">ORCID</a> &nbsp;|&nbsp;
+        <a href="https://ui.adsabs.harvard.edu/search/q=author%3A%22Gibson%2C%20Adalyn%22&sort=date%20desc%2C%20bibcode%20desc&p_=0" target="_blank">ADS</a>
+      </p>
+      <h3>Probing Non-Thermal Processes in Stellar Flares</h3>
+      <p>
+        In my second year, I expanded my research horizons to include stellar flare physics, something I was not expecting to love as much as I do. I fell in love with flares and would like to pursue research on stellar activity in the future, especially in the context of exoplanet atmospheres. In this research, conducted under the guidance of Dr. Adam Kowalski and Dr. Adina Feinstein, I utilized Hubble Space Telescope/Cosmic Origins Spectrograph observations of the young M-dwarf AU Mic to characterize its stellar flare atmosphere, with the initial goal of searching for non-thermal proton beams during flares. I identified, modeled, and calculated the properties of the observed flares and compared my findings with those in the literature. In my research, I worked with stellar flare models and explored the current successes and failures of these models. I also discussed in depth the effects of stellar flaring on exoplanet atmospheres and habitability. I presented my research via an <a href="https://aas242-aas.ipostersessions.com/?s=2D-E3-A1-85-02-E6-11-EE-E9-EF-18-82-A8-BE-24-E3" target="_blank">iposter</a> presentation at the 245th American Astronomical Society meeting, as well as the 2025 Conference for Undergraduate Women and Gender Minorities in Physics and the 2025 CU Boulder Undergraduate Research Expo. This research served as the subject of my undergraduate Latin honors thesis, completed in my third year, and I received the honors designation of Magna Cum Laude; I published this research in the CU honors journal. On arXiv now! Submitted to The Astrophysical Journal Letters.
+        <a href="https://arxiv.org/abs/2506.10201" target="_blank">arXiv:2506.10201</a>
+      </p>
+      <img src="IMG_8881 (3).heic.png" alt="Stellar flare research image">
 
-    <h3>Atmospheric Characterization</h3> 
-    <p>
-      .....
-    </p>
-    <div class="back-button"><button onclick="goHome()">← Back to Home</button></div>
-  </section>
+      <h3>TESS Photometry of Extreme Debris Disk RZ Psc</h3>
+      <p>
+        In my first semester at the University of Colorado Boulder, I was accepted into the STEM Routes Uplift program, which places underrepresented undergraduate students with research advisors to pursue undergraduate research. In this program, I attended weekly workshops on technical research skills and learned essential research skills through hands-on training and my research project. I was paired with Dr. Meredith MacGregor as my research advisor and conducted a study searching for exocomets in extreme debris disks using observations from The Transiting Exoplanet Survey Satellite. After presenting my final project for the Uplift program, I continued my research with Dr. Meredith MacGregor and Dr. Ward Howard on exocomets. I was awarded two Undergraduate Research Opportunity grants to pursue this research. I presented this research at the 2024 Conference for Undergraduate Women and Gender Minorities in Physics and the 2024 CU Boulder Undergraduate Research Expo. I detected 19 exocomets in the extreme debris disk around RZ Psc. I modeled these exocomets and calculated their properties, comparing them to populations found in other systems and our solar system, and analyzed the potential of exocomet science in the context of habitable planet formation. I got experience modeling, characterizing, and removing stellar variability through Gaussian Process modeling.
+      </p>
+      <img src="IMG_1774.HEIC.png" alt="Debris disk research image">
 
-  <section id="outandteach" class="section-content">
-    <h2>Outreach and Teaching</h2>
-    <h3>CU Astronomy Club</h3> 
-    <p>
-      I am the Social Media Content Lead for the CU Astronomy club. <a href="https://www.colorado.edu/aps/our-department/outreach/cu-astronomy-club-cuac">CUAC Website</a>
-      <img src="astroclub.png" style="height:200px; margin: 1em 0; display: block;"> 
-    </p>
-    <div class="back-button"><button onclick="goHome()">← Back to Home</button></div>
-  </section>
+      <h3>Atmospheric Characterization</h3>
+      <p>
+        .....
+      </p>
+      <div class="back-button"><button onclick="goHome()">← Back to Home</button></div>
+    </section>
 
-  <section id="contact" class="section-content">
-    <h2>Contact</h2>
-    <p>If you would like to discuss anything mentioned on the website feel free to contact me:</p>
-    <div class="social-links">
-      <a href="mailto:adgi9680@colorado.edu">Email</a> |
-      <a href="https://github.com/Adalyn-Gibson">GitHub</a> |
-      <a href="https://www.linkedin.com/in/adalyngibson">LinkedIn</a>
-    </div>
-    <div class="back-button"><button onclick="goHome()">← Back to Home</button></div>
-  </section>
+    <section id="outandteach" class="section-content">
+      <h2>Outreach and Teaching</h2>
+      <h3>CU Astronomy Club</h3>
+      <p>
+        I am the Social Media Content Lead for the CU Astronomy Club.
+        <a href="https://www.colorado.edu/aps/our-department/outreach/cu-astronomy-club-cuac" target="_blank">CUAC Website</a>
+      </p>
+      <img src="astroclub.png" alt="CU Astronomy Club">
+      <div class="back-button"><button onclick="goHome()">← Back to Home</button></div>
+    </section>
 
+    <section id="contact" class="section-content">
+      <h2>Contact</h2>
+      <p>If you would like to discuss anything mentioned on the website feel free to contact me:</p>
+      <div class="social-links">
+        <a href="mailto:adgi9680@colorado.edu">Email</a> |
+        <a href="https://github.com/Adalyn-Gibson" target="_blank">GitHub</a> |
+        <a href="https://www.linkedin.com/in/adalyngibson" target="_blank">LinkedIn</a>
+      </div>
+      <div class="back-button"><button onclick="goHome()">← Back to Home</button></div>
+    </section>
+  </main>
   <script>
     function showSection(id) {
       document.getElementById("home").style.display = "none";
