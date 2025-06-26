@@ -307,6 +307,12 @@
         <a href="https://www.colorado.edu/aps/our-department/outreach/cu-astronomy-club-cuac" target="_blank">CUAC Website</a>
       </p>
       <img src="astroclub.png" alt="CU Astronomy Club">
+      <h3>Teaching</h3>
+      <p>
+        Learning Assistant for ASTR 2600 - Introduction to Scientific Programming.
+        Grader for ASTR 2600 - Introduction to Scientific Programming.
+        Grader for ASTR 1010 - Introductory Astronomy: The Solar System w/Lab.
+      </p>
       <div class="back-button"><button onclick="goHome()">← Back to Home</button></div>
     </section>
 
@@ -321,19 +327,52 @@
       <div class="back-button"><button onclick="goHome()">← Back to Home</button></div>
     </section>
   </main>
-  <script>
+    <script>
+    // Mapping section IDs to titles
+    const sectionTitles = {
+      home: "Home",
+      about: "About Me",
+      Research: "Research Highlights",
+      outandteach: "Outreach & Teaching",
+      contact: "Contact"
+    };
+  
+    // Show section with breadcrumb update
     function showSection(id) {
       document.getElementById("home").style.display = "none";
       document.querySelectorAll(".section-content").forEach(section => section.classList.remove("active"));
       document.getElementById(id).classList.add("active");
+      updateBreadcrumb(id);
       window.scrollTo(0, 0);
     }
-
+  
     function goHome() {
       document.querySelectorAll(".section-content").forEach(section => section.classList.remove("active"));
       document.getElementById("home").style.display = "flex";
+      updateBreadcrumb("home");
       window.scrollTo(0, 0);
     }
+  
+    function updateBreadcrumb(currentSectionId) {
+      const breadcrumb = document.getElementById("breadcrumb");
+      if (!breadcrumb) return;
+      if (currentSectionId === "home") {
+        breadcrumb.style.display = "none";
+        breadcrumb.innerHTML = "";
+      } else {
+        breadcrumb.style.display = "block";
+        breadcrumb.innerHTML = `
+          <span class="breadcrumb-link" onclick="goHome()">Home</span>
+          <span class="breadcrumb-separator">/</span>
+          <span class="breadcrumb-current">${sectionTitles[currentSectionId]}</span>
+        `;
+      }
+    }
+  
+    // Initialize breadcrumb on page load
+    document.addEventListener("DOMContentLoaded", function() {
+      updateBreadcrumb("home");
+    });
   </script>
 </body>
 </html>
