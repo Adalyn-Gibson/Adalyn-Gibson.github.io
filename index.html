@@ -176,6 +176,20 @@
       text-align: center;
     }
 
+    .section-content ul {
+      display: inline-block;
+      text-align: left;
+      list-style-type: none;
+      padding-left: 0;
+    }
+    
+    /* Replace bullets with star icons */
+    .section-content ul li::before {
+      content: '★'; /* Unicode star */
+      color: #FFC560; /* Gold star */
+      margin-right: 8px;
+    }
+
     .centered-figure {
       display: block;
       text-align: center;
