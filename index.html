@@ -30,24 +30,15 @@
       }
     }
 
-   header::before,
-   header::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      width: 4px;
-      background: linear-gradient(to bottom, #E14D12, #DA133E);
-      box-shadow: 0 0 10px rgba(255, 0, 204, 0.6);
-      z-index: -1;
-    }
-    
-   header::before {
-      left: 0;
-    }
-    
-   header::after {
-      right: 0;
+    header {
+      text-align: center;
+      padding: 2.5rem 1rem 2rem 1rem;
+      background-color: white;   
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      box-shadow: 0 2px 12px rgba(75,63,114,0.07);
+      position: relative;
     }
 
     header h1 {
