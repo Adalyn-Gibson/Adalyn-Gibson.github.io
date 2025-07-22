@@ -33,12 +33,23 @@
     header {
       text-align: center;
       padding: 2.5rem 1rem 2rem 1rem;
-      background-color: white;   
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
+      background: linear-gradient(-45deg, #0d0d40, #1a1a60, #3a3a80, #1a1a60);
+      background-size: 400% 400%;
+      animation: starScene 20s ease infinite;
+      color: white;
       box-shadow: 0 2px 12px rgba(75,63,114,0.07);
       position: relative;
+    }
+    @keyframes starScene {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
     }
 
     header h1 {
