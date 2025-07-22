@@ -234,7 +234,48 @@
     .back-button button:hover {
       background: #FCA17D;
     }
-
+    .scroll-section {
+      min-height: 100vh;
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed; /* Optional: adds a parallax-like effect */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      color: white;
+      padding: 4rem 2rem;
+    }
+    
+    .scroll-section .overlay {
+      background: rgba(0, 0, 0, 0.5); /* Dark transparent overlay for readability */
+      padding: 2rem;
+      border-radius: 0px;
+      max-width: 800px;
+      width: 100%;
+    }
+    
+    .scroll-section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .scroll-section p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+    main {
+      scroll-snap-type: y mandatory;
+      overflow-y: scroll;
+      height: 100vh;
+    }
+    
+    .scroll-section {
+      scroll-snap-align: start;
+    }
+        
+ 
     .social-links {
       margin-top: 1.5rem;
       font-size: 1.12rem;
@@ -295,48 +336,34 @@
   </header>
 
   <main>
-    <div id="home" class="card-grid">
-      <div class="card" style="background-image: url('picme.png');" onclick="showSection('about')">
-        <div class="card-text">About Me</div>
-      </div>
-      <div class="card" style="background-image: url('researchbackground.png');" onclick="showSection('Research')">
-        <div class="card-text">Research Highlights</div>
-      </div>
-      <div class="card" style="background-image: url('astroclub2.png');" onclick="showSection('outandteach')">
-        <div class="card-text">Outreach & Teaching</div>
-      </div>
-      <div class="card" style="background-image: url('image_7427e-DS-Tuc-Ab.jpg');" onclick="showSection('contact')">
-        <div class="card-text">Contact</div>
-      </div>
-    </div>
-
-    <section id="about" class="section-content" style="text-align: center;">
-      <h2>About Me</h2>
-      <p>
-        Hello, I am a 4th-year undergraduate student in the <strong>Astrophysical and Planetary Sciences</strong> department at the <strong>University of Colorado Boulder</strong>. Throughout my time at the University of Colorado Boulder, I have been committed to astrophysical research in multiple subfields, and I have been heavily involved in teaching and outreach. <strong>I am spending my Fall semester applying to graduate schools</strong>. If you would like to discuss graduate or research opportunities, feel free to contact me: adalyn [dot] gibson [at] colorado [dot] edu
-      </p>
-      <figure class="centered-figure">
-        <img src="mameaas.jpg" alt="Adalyn Gibson AAS" width="400"">
-        <figcaption>The 245th AAS meeting in National Harbor, Maryland.</figcaption>
-      </figure>
-      <p>
-        When I'm not doing astronomy, I like to spend as much time outside as possible, hiking, paddleboarding, or swimming. 
-      </p>
-      <figure class="centered-figure">
-        <img src="grandtetnew.jpg" alt="Grand Tetons" width="400">
-        <figcaption>Grand Tetons National Park.</figcaption>
-      </figure>
-      <figure class="centered-figure">
-        <img src="yellowstone.jpg" alt="Yellowstone" width="400">
-        <figcaption>Yellowstone National Park.</figcaption>
-      </figure>
-      <figure class="centered-figure">
-        <img src="camping.jpg" alt="Camping" width="400">
-      </figure>
-      <div class="back-button"><button onclick="goHome()">← Back to Home</button></div>
+    <section class="scroll-section" style="background-image: url('picme.png');">
+       <div class="overlay">
+          <h2>About Me</h2>
+          <p>
+            Hello, I am a 4th-year undergraduate student in the <strong>Astrophysical and Planetary Sciences</strong> department at the <strong>University of Colorado Boulder</strong>. Throughout my time at the University of Colorado Boulder, I have been committed to astrophysical research in multiple subfields, and I have been heavily involved in teaching and outreach. <strong>I am spending my Fall semester applying to graduate schools</strong>. If you would like to discuss graduate or research opportunities, feel free to contact me: adalyn [dot] gibson [at] colorado [dot] edu
+          </p>
+          <figure class="centered-figure">
+            <img src="mameaas.jpg" alt="Adalyn Gibson AAS" width="400"">
+            <figcaption>The 245th AAS meeting in National Harbor, Maryland.</figcaption>
+          </figure>
+          <p>
+            When I'm not doing astronomy, I like to spend as much time outside as possible, hiking, paddleboarding, or swimming. 
+          </p>
+          <figure class="centered-figure">
+            <img src="grandtetnew.jpg" alt="Grand Tetons" width="400">
+            <figcaption>Grand Tetons National Park.</figcaption>
+          </figure>
+          <figure class="centered-figure">
+            <img src="yellowstone.jpg" alt="Yellowstone" width="400">
+            <figcaption>Yellowstone National Park.</figcaption>
+          </figure>
+          <figure class="centered-figure">
+            <img src="camping.jpg" alt="Camping" width="400">
+          </figure>
+       </div>
     </section>
-
-    <section id="Research" class="section-content" style="text-align: center;">
+    <section class="scroll-section" style="background-image: url('researchbackground.png');">
+    <div class="overlay">
       <h2>Research Highlights</h2>
       <p style="margin-bottom: 1.5em;">
         <a href="https://orcid.org/0009-0006-5310-6855" target="_blank">ORCID</a> &nbsp;|&nbsp;
@@ -364,40 +391,40 @@
       <p>
         This summer, I am working with Professor Adina Feinstein at Michigan State University, where I utilize high-resolution spectroscopy observations obtained with Gemini-S/IGRINS to investigate the atmospheric properties of a young planet. In this research, I am implementing a new machine learning technique to model the stellar and telluric components, allowing for the analysis of the spectrum to determine atmospheric composition. Paper in prep!
       </p>
-      <div class="back-button"><button onclick="goHome()">← Back to Home</button></div>
+    </div>
+    
     </section>
-
-    <section id="outandteach" class="section-content" style="text-align: center;">
-      <h2>Outreach and Teaching</h2>
-      <h3>CU Astronomy Club</h3>
-      <p>
-        I am the Social Media Content Lead for the CU Astronomy Club.
-        <a href="https://www.colorado.edu/aps/our-department/outreach/cu-astronomy-club-cuac" target="_blank">CUAC Website</a>
-      </p>
-      <figure class="centered-figure">
-        <img src="astroclub.png" alt="CU Astronomy Club" width="400"">
-      </figure>
-      <h3>Teaching</h3>
-      <figure class="centered-figure">
-        <img src="LAA.png" alt="Learning Assistant Alliance" width="400"">
-      </figure>
-      <ul>
-        <li>Learning Assistant for ASTR 2600 - Introduction to Scientific Programming.</li>
-        <li>Grader for ASTR 2600 - Introduction to Scientific Programming.</li>
-        <li>Grader for ASTR 1010 - Introductory Astronomy: The Solar System w/Lab.</li>
-      </ul>
-      <div class="back-button"><button onclick="goHome()">← Back to Home</button></div>
+    <section class="scroll-section" style="background-image: url('astroclub2.png');">
+      <div class="overlay">
+        <h2>Outreach & Teaching</h2>
+        <h3>CU Astronomy Club</h3>
+        <p>
+          I am the Social Media Content Lead for the CU Astronomy Club.
+          <a href="https://www.colorado.edu/aps/our-department/outreach/cu-astronomy-club-cuac" target="_blank">CUAC Website</a>
+        </p>
+        <figure class="centered-figure">
+          <img src="astroclub.png" alt="CU Astronomy Club" width="400"">
+        </figure>
+        <h3>Teaching</h3>
+        <figure class="centered-figure">
+          <img src="LAA.png" alt="Learning Assistant Alliance" width="400"">
+        </figure>
+        <ul>
+          <li>Learning Assistant for ASTR 2600 - Introduction to Scientific Programming.</li>
+          <li>Grader for ASTR 2600 - Introduction to Scientific Programming.</li>
+          <li>Grader for ASTR 1010 - Introductory Astronomy: The Solar System w/Lab.</li>
+        </ul>
+      </div>
     </section>
-
-    <section id="contact" class="section-content" style="text-align: center;">
-      <h2>Contact</h2>
-      <p>If you would like to discuss anything mentioned on the website feel free to contact me:</p>
+    <section class="scroll-section" style="background-image: url('image_7427e-DS-Tuc-Ab.jpg');">
+      <div class="overlay">
+        <h2>Contact</h2>
+        <p>If you would like to discuss anything mentioned on the website feel free to contact me:</p>
       <div class="social-links">
         <a href="mailto:adgi9680@colorado.edu">Email</a> |
         <a href="https://github.com/Adalyn-Gibson" target="_blank">GitHub</a> |
         <a href="https://www.linkedin.com/in/adalyngibson" target="_blank">LinkedIn</a>
       </div>
-      <div class="back-button"><button onclick="goHome()">← Back to Home</button></div>
     </section>
   </main>
     <script>
