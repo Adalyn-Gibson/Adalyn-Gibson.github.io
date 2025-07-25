@@ -31,7 +31,9 @@
     }
 
     header {
-      text-align: center;
+      display: flex;
+      justify-content: space-between; /* Text left, image right */
+      align-items: center;            /* Vertically center content */
       padding: 2.5rem 1rem 2rem 1rem;
       background: linear-gradient(-45deg, #F9DBBD, #FBBE9D, #FCA17D, #EB827D, #E89CAC, #D897BA, #D175C6);
       background-size: 400% 400%;
@@ -50,12 +52,6 @@
       100% {
         background-position: 0% 50%;
       }
-    }
-    header {
-      display: flex;
-      justify-content: space-between; /* Text left, image right */
-      align-items: center;           /* Vertically center content */
-      padding: 20px;
     }
     
     .header-text {
@@ -122,6 +118,28 @@
     .card:hover {
       transform: translateY(-8px) scale(1.04);
       box-shadow: 0 16px 32px rgba(75,63,114,0.21), 0 2px 8px rgba(75,63,114,0.14);
+    }
+    .about-me {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 4rem 2rem;
+    
+      /* Same gradient and animation as header */
+      background: linear-gradient(-45deg, #F9DBBD, #FBBE9D, #FCA17D, #EB827D, #E89CAC, #D897BA, #D175C6);
+      background-size: 400% 400%;
+      animation: starScene 20s ease infinite; /* same keyframes you used for header */
+    }
+    
+    .about-me .overlay {
+      background: rgba(0, 0, 0, 0.5); /* optional: dark overlay for readability */
+      padding: 2rem;
+      border-radius: 0px;
+      max-width: 800px;
+      width: 100%;
+      color: white;
     }
 
     .card::before {
@@ -383,7 +401,7 @@
   </header>
 
   <main>
-    <section class="scroll-section" style="background-color: black;">
+    <section class="about-me">
        <div class="overlay">
           <h2>About Me</h2>
           <p>
