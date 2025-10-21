@@ -380,6 +380,52 @@
         font-size: 1.25rem;
       }
     }
+
+    /* --- MOBILE FIXES --- */
+    @media (max-width: 700px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+      .header-text {
+        max-width: 100%;
+      }
+      .header-image img {
+        max-width: 120px;
+        margin-top: 1rem;
+      }
+      main {
+        scroll-snap-type: none;
+        overflow-y: auto;
+        height: auto;
+      }
+      .scroll-section {
+        scroll-snap-align: none;
+        min-height: auto;
+        background-attachment: scroll;
+      }
+    }
+    
+    @media (max-width: 500px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+      header p {
+        font-size: 1rem;
+      }
+      .scroll-section h2 {
+        font-size: 1.8rem;
+      }
+      .scroll-section p {
+        font-size: 1rem;
+      }
+      figure img {
+        width: 90%;
+        height: auto;
+      }
+    }
+
+    
   </style>
 </head>
 <body>
