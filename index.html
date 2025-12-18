@@ -52,12 +52,12 @@
     }
     
     .header-text {
-      max-width: 70%; /* Keep text from overlapping image */
+      max-width: 70%; 
     }
     
     .header-image img {
-      max-width: 150px; /* Adjust image size */
-      border-radius: 50%; /* Optional: make it circular */
+      max-width: 150px; 
+      border-radius: 50%; 
     }
 
     header h1 {
@@ -124,14 +124,14 @@
       text-align: center;
       padding: 4rem 2rem;
     
-      /* Same gradient and animation as header */
+     
       background: linear-gradient(-45deg, #F9DBBD, #FBBE9D, #FCA17D, #EB827D, #E89CAC, #D897BA, #D175C6);
       background-size: 400% 400%;
-      animation: starScene 20s ease infinite; /* same keyframes you used for header */
+      animation: starScene 20s ease infinite; 
     }
     
     .about-me .overlay {
-      background: rgba(0, 0, 0, 0.5); /* optional: dark overlay for readability */
+      background: rgba(0, 0, 0, 0.5); 
       padding: 2rem;
       border-radius: 0px;
       max-width: 800px;
@@ -238,7 +238,7 @@
       padding-left: 0;
     }
     
-    /* Replace bullets with star icons */
+    
     .section-content ul li::before {
       content: '★'; 
       color: #FCA17D; 
@@ -279,7 +279,7 @@
       min-height: 100vh;
       background-size: cover;
       background-position: center;
-      background-attachment: fixed; /* Optional: adds a parallax-like effect */
+      background-attachment: fixed; 
       display: flex;
       align-items: center;
       justify-content: center;
@@ -290,7 +290,7 @@
     }
     
     .scroll-section .overlay {
-      background: rgba(0, 0, 0, 0.5); /* Dark transparent overlay for readability */
+      background: rgba(0, 0, 0, 0.5); 
       padding: 2rem;
       border-radius: 0px;
       max-width: 800px;
@@ -308,13 +308,13 @@
     }
 
     .scroll-section a {
-      color: #F9DBBD; /* bright gold, for example */
-      text-decoration: none; /* optional: removes underline */
+      color: #F9DBBD; 
+      text-decoration: none; 
     }
   
     .scroll-section a:hover {
-      color: #F9DBBD; /* lighter gold on hover */
-      text-decoration: underline; /* optional: adds underline on hover */
+      color: #F9DBBD; 
+      text-decoration: underline; 
     }
     main {
       scroll-snap-type: y mandatory;
@@ -377,7 +377,7 @@
       }
     }
 
-    /* --- MOBILE FIXES --- */
+   
     @media (max-width: 700px) {
       header {
         flex-direction: column;
@@ -547,7 +547,7 @@
     </section>
   </main>
     <script>
-    // Mapping section IDs to titles
+    
     const sectionTitles = {
       home: "Home",
       about: "About Me",
@@ -556,7 +556,7 @@
       contact: "Contact"
     };
   
-    // Show section with breadcrumb update
+    
     function showSection(id) {
       document.getElementById("home").style.display = "none";
       document.querySelectorAll(".section-content").forEach(section => section.classList.remove("active"));
@@ -588,7 +588,7 @@
       }
     }
   
-    // Initialize breadcrumb on page load
+    
     document.addEventListener("DOMContentLoaded", function() {
       updateBreadcrumb("home");
     });
