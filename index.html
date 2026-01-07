@@ -6,75 +6,27 @@
   <title>Adalyn Gibson | Research Website</title>
   <ink href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: 'Lora', serif;
-      margin: 0;
-      padding: 0;
-      background: #000000;
-      color: white;
-      min-height: 100vh;
-    }
+    body {font-family: 'Lora', serif; margin: 0; padding: 0; background: #000000; color: white; min-height: 100vh;}
 
-    header {
-      display: flex;
-      justify-content: center; 
-      align-items: center;  
-      gap: 2rem; 
-      padding: 2.5rem 1rem 2rem 1rem;
-      background: #000000;
-      color: white;
-      box-shadow: 0 2px 12px rgba(75,63,114,0.07);
-      position: relative;
-    }
-    @keyframes starScene {
-      0% {
-        background-position: 0% 50%;
-      }
-      50% {
-        background-position: 100% 50%;
-      }
+    header {display: flex; justify-content: center; align-items: center; gap: 2rem; padding: 2.5rem 1rem 2rem 1rem; background: #000000; color: white; box-shadow: 0 2px 12px rgba(75,63,114,0.07); position: relative;}
+    @keyframes starScene {0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
       100% {
         background-position: 0% 50%;
       }
     }
     
-    .header-text {
-      max-width: 70%; 
-    }
+    .header-text {max-width: 70%; }
     
-    .header-image img {
-      max-width: 150px; 
-      border-radius: 50%; 
-    }
+    .header-image img {max-width: 150px; border-radius: 50%; }
 
-    header h1 {
-      margin: 0;
-      font-size: 3rem;
-      color: white;
-      letter-spacing: 1px;
-    }
+    header h1 {margin: 0; font-size: 3rem; color: white; letter-spacing: 1px;}
 
-    header p {
-      margin: 0.5rem 0 0;
-      font-size: 1.25rem;
-      color: white;
-    }
+    header p {margin: 0.5rem 0 0; font-size: 1.25rem; color: white;}
 
-    .cv-link {
-      margin-top: 1.2rem;
-      font-size: 1.1rem;
-      display: inline-block;
-      background:#ffffff;
-      color: #000000 !important;
-      padding: 0.4em 1.5em;
-      border-radius: 0px;
-      text-decoration: none;
-      transition: background 0.2s;
-      box-shadow: 0 2px 8px rgba(75,63,114,0.09);
-    }
-    .cv-link:hover {
-      background: #FCA17D;
-    }
+    .cv-link {margin-top: 1.2rem; font-size: 1.1rem; display: inline-block; background:#ffffff; color: #000000 !important;
+      padding: 0.4em 1.5em; border-radius: 0px; text-decoration: none; transition: background 0.2s; box-shadow: 0 2px 8px rgba(75,63,114,0.09);}
+    .cv-link:hover {background: #FCA17D;}
 
     .card-grid {
       display: flex;
@@ -152,9 +104,7 @@
       background: linear-gradient(0deg, rgba(41,30,60,.44) 60%, rgba(0,0,0,0) 100%);
     }
 
-    main {
-      min-height: 60vh;
-    }
+    main {min-height: 60vh;}
 
     .section-content {
       display: none;
@@ -172,9 +122,7 @@
       to { opacity: 1; transform: translateY(0);}
     }
 
-    .section-content.active {
-      display: block;
-    }
+    .section-content.active {display: block;}
 
     .section-content h2 {
       color: #000000;
